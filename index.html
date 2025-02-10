@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Invoice Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="Logo_Final@3x-8.png" alt="Company Logo" width="200" height="auto">
+        </div>
+        <h1>Salary Invoice Generator</h1>
+
+        <!-- Input Form -->
+        <form id="invoiceForm">
+            <label for="week">Week:</label>
+            <input type="text" id="week" name="week" >
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" >
+
+            <label for="subjectName">Subject Name:</label>
+            <input type="text" id="subjectName" name="subjectName" >
+
+            <label for="facultyName">Faculty Name:</label>
+            <input type="text" id="facultyName" name="facultyName" >
+
+            <label for="module">Module:</label>
+            <input type="text" id="module" name="module" >
+
+            <label for="partNo">Part No:</label>
+            <input type="text" id="partNo" name="partNo">
+
+            <label for="hours">Hours:</label>
+            <input type="number" id="hours" name="hours" step="0.1" >
+
+            <button type="button" id="addEntry">Add Entry</button>
+            <button type="submit">Generate Invoice</button>
+            <button id="printPdf" class="hidden">Print as PDF</button>
+        </form>
+    </div>
+
+    <div class="container1">
+        <!-- Table to Display Entries -->
+        <table id="entriesTable">
+            <thead>
+                <tr>
+                    <th>Week</th>
+                    <th>Date</th>
+                    <th>Subject Name</th>
+                    <th>Faculty Name</th>
+                    <th>Module</th>
+                    <th>Part No</th>
+                    <th>Hours</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be added dynamically -->
+            </tbody>
+        </table>
+
+        <!-- Invoice Display -->
+        <div id="invoiceResult" class="hidden">
+            <h2>Invoice Details</h2>
+            <p><strong>Total Hours:</strong> <span id="totalHours"></span></p>
+            <p><strong>Total Salary:</strong> ₹<span id="totalSalary"></span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
